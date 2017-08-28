@@ -1,0 +1,184 @@
+
+// ------------------------- VARIABLES ---------------------------------//
+$green: #18bb7c;
+$lightGrey: #666666;
+$darkGrey: #333333;
+$borderGrey: #d7d7d7;
+$black: #070707;
+$backgroundDarkGrey: #191919;
+$backgroundWhite: #FCFCFC;
+$backgroundGrey: #F2F2F2;
+$textWhite: #ffffff;
+
+
+
+// ------------------------- MIXINS ---------------------------------//
+
+
+@mixin flexCol($sizeValue) {
+    font-size: $sizeValue;
+    color: blue;
+    font-weight: bold;
+}
+
+/* @include respond-to("medium"){ // styles go here }
+ */
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 480px) {
+      @content;
+    }
+}
+
+  @else if $breakpoint == "medium" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (max-width: 940px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "xlarge" {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Backgrounds
+.fullBleed {
+  padding: 150px 15px;
+  border-bottom: 1px solid $borderGrey;
+
+}
+
+.fullBleed--white{
+  background-color: $backgroundWhite;
+}
+
+.fullBleed--grey {
+  background-color: $backgroundGrey;
+}
+
+.fullBleed--hero {
+  background-image: url(../assets/jpegs/hero.jpg);
+  background-size: cover;
+  background-position: fixed;
+  padding: 250px 0;
+}
+
+.fullBleed--green {
+  background-color: $green;
+  padding: 30px 0px;
+}
+
+.fullBleed--banner {
+  background-color: $black;
+  line-height: 0px;
+}
+
+.fullBleed--darkGrey {
+  background-color: $backgroundDarkGrey;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1170px;
+  }
+
+// Global Styles
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  border-radius: 2em;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 20px;
+  text-align: center;
+  &:hover {
+    box-shadow: 5px 5px 0px $darkGrey;
+    transform: translateX(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.btn__text{
+  color: $textWhite;
+  text-transform: uppercase;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.btn__text--sml{
+  color: $textWhite;
+  text-transform: uppercase;
+  font-family: 'Raleway';
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.btn__text--dark{
+  color: $darkGrey;
+}
+
+.btn__color--clearWhite {
+  border: 1px solid $textWhite; 
+}
+
+.btn__color--clearGreen {
+  border: 1px solid $green;
+}
+
+.btn__color--green {
+  background-color: $green;
+}
+
+.btn__color--black {
+  background-color: black;
+}
+
+.btn__size--sml {
+  padding: 20px 40px;
+} 
+
+.btn__size--lrg {
+  padding: 20px 40px;
+}
+
+.btn__size--xsml {
+  border-radius: 2em;
+  padding: 10px 15px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
